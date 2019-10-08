@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TodoApp</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body>
+        <header>
+     <h2 class="mystyle"> Todo List</h2>
+        </header> 
+    <div class = "section">
+        <form action ="/addtask" method="POST">
+            
+                <input type="text" name ="doTask" placeholder="Works to be done">
+                <span>
+                    <button>Add to List</button>
+                </span>
+                
+
+            <h2 class="mystyle"> Tasks to be done</h2>
+                <% for( var i = 0; i < taskTodo.length; i++){ %>
+
+                    <li><input type="checkbox" name="check" value="<%= taskTodo[i] %>"/> <%= taskTodo[i] %> </li>
+        
+                <% } %>   
+            <button formaction="/removetask" type="submit"> Remove Task </button>
+        </form>
+        <h2 class="mystyle"> Completed Tasks</h2>
+            <% for(var i = 0; i < compTodo.length; i++){ %>
+                <li><input type="checkbox" checked><%= compTodo[i] %> </li>
+            <% } %>
+  </div>  
+  </body>
+</html>
